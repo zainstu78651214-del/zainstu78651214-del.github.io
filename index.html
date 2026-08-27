@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Professional portfolio of Zain Abbas, a Software Developer specializing in MERN Stack, React, Node.js, MongoDB, React Native, and AI/ML." />
+    <title>Zain Abbas | Software Developer</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet" />
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- Swiper JS for testimonials -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- Global Styles -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <!-- ===== Scroll Progress ===== -->
+    <div id="scrollProgress"><div class="progress-bar" id="scrollProgressBar"></div></div>
+
+    <!-- ===== Back to Top ===== -->
+    <button id="backToTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+        <svg class="progress-ring" viewBox="0 0 54 54">
+            <circle cx="27" cy="27" r="25" id="backToTopCircle" />
+        </svg>
+    </button>
+
+    <!-- ===== Particle Canvas ===== -->
+    <canvas id="particles-canvas"></canvas>
+    <div id="mouseGlow"></div>
+
+    <!-- ===== NAVBAR (Fixed) ===== -->
+    <nav class="navbar navbar-expand-lg navbar-custom fixed-top" id="mainNav">
+        <div class="container">
+            <!-- ✅ FIXED: changed 'home.html' to 'index.html' -->
+            <a class="navbar-brand" href="index.html">Zain<span>Abbas</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link active" href="#hero">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item ms-lg-2">
+                        <a href="contact.html" class="btn btn-hire">Hire Me</a>
+                    </li>
+                    <li class="nav-item ms-lg-1">
+                        <button class="theme-toggle" id="themeToggle"><i class="fas fa-moon" id="themeIcon"></i></button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero-section" id="hero">
+        <div class="container">
+            <div class="row align-items-center gy-5">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="hero-badge"><span class="dot"></span> Available for opportunities</div>
+                    <h1>Hi, I'm <span class="highlight">Zain Abbas</span></h1>
+                    <div class="hero-title"><span id="typingText"></span><span class="typing-cursor"></span></div>
+                    <p class="hero-desc">Building scalable web applications, modern user experiences, and intelligent software solutions using modern full-stack and AI technologies.</p>
+                    <div class="hero-cta">
+                        <a href="projects.html" class="btn btn-primary-custom"><i class="fas fa-folder-open"></i> View My Projects</a>
+                        <a href="images/zain-abbas-cv.pdf" download="Zain_Abbas_CV.pdf" class="btn btn-outline-custom"><i class="fas fa-download"></i> Download CV</a>
+                        <a href="contact.html" class="btn btn-outline-custom"><i class="fas fa-envelope"></i> Contact Me</a>
+                    </div>
+                    <div class="hero-social">
+                        <a href="https://github.com" target="_blank"><i class="fab fa-github"></i><span class="tooltip-social">GitHub</span></a>
+                        <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i><span class="tooltip-social">LinkedIn</span></a>
+                        <a href="mailto:zainstu78651214@gmail.com"><i class="fas fa-envelope"></i><span class="tooltip-social">Email</span></a>
+                        <a href="#" target="_blank"><i class="fab fa-twitter"></i><span class="tooltip-social">Twitter</span></a>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+                    <div class="hero-visual">
+                        <div class="code-block">
+                            <div class="code-header"><span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span></div>
+                            <div class="line"><span class="number">1</span><span class="keyword">const</span> <span class="variable">developer</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="function">Developer</span><span class="bracket">(</span>{</div>
+                            <div class="line"><span class="number">2</span>&nbsp;&nbsp;name: <span class="string">"Zain Abbas"</span>,</div>
+                            <div class="line"><span class="number">3</span>&nbsp;&nbsp;role: <span class="string">"Full-Stack Developer"</span>,</div>
+                            <div class="line"><span class="number">4</span>&nbsp;&nbsp;stack: <span class="bracket">[</span><span class="string">"MERN"</span>, <span class="string">"TypeScript"</span>, <span class="string">"React Native"</span><span class="bracket">]</span>,</div>
+                            <div class="line"><span class="number">5</span>&nbsp;&nbsp;passion: <span class="string">"Building impactful software"</span></div>
+                            <div class="line"><span class="number">6</span><span class="bracket">}</span><span class="bracket">)</span><span class="operator">;</span></div>
+                            <div class="line"><span class="number">7</span><span class="comment">// Open to work · Let's connect!</span></div>
+                        </div>
+                        <div class="floating-badge floating-badge-1"><i class="fas fa-code"></i> 10+ Projects</div>
+                        <div class="floating-badge floating-badge-2"><i class="fas fa-rocket"></i> Full-Stack</div>
+                        <div class="floating-badge floating-badge-3"><i class="fas fa-brain"></i> AI/ML</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section class="section-padding about-section" id="about">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">About <span class="text-gradient">Me</span></h2>
+                <p class="section-subtitle">Passionate Software Developer with a Bachelor's in Information Technology</p>
+            </div>
+            <div class="row gy-4">
+                <div class="col-lg-7" data-aos="fade-right">
+                    <div class="about-text">
+                        <p>I'm a passionate Software Developer with a Bachelor's degree in Information Technology and experience building full-stack applications. I specialize in creating scalable web applications, modern user experiences, and intelligent software solutions.</p>
+                        <p>My expertise spans the entire development lifecycle — from designing clean, responsive frontends with React and TypeScript to building robust backend systems with Node.js, Express, and MongoDB. I'm also enthusiastic about AI/ML experimentation and mobile development with React Native.</p>
+                        <ul class="about-list">
+                            <li><i class="fas fa-circle-check"></i> Full-Stack Web Development</li>
+                            <li><i class="fas fa-circle-check"></i> MERN Stack Development</li>
+                            <li><i class="fas fa-circle-check"></i> REST API Development</li>
+                            <li><i class="fas fa-circle-check"></i> Database Design &amp; Management</li>
+                            <li><i class="fas fa-circle-check"></i> Authentication &amp; Authorization</li>
+                            <li><i class="fas fa-circle-check"></i> React Native Development</li>
+                            <li><i class="fas fa-circle-check"></i> AI/ML Experimentation</li>
+                            <li><i class="fas fa-circle-check"></i> Clean &amp; Maintainable Code</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-5" data-aos="fade-left">
+                    <div class="stats-grid">
+                        <div class="stat-item"><div class="stat-number" data-count="12">0</div><div class="stat-label">Projects Completed</div></div>
+                        <div class="stat-item"><div class="stat-number" data-count="35">0</div><div class="stat-label">Technologies</div></div>
+                        <div class="stat-item"><div class="stat-number" data-count="4">0</div><div class="stat-label">Years of Experience</div></div>
+                        <div class="stat-item"><div class="stat-number" data-count="280">0</div><div class="stat-label">GitHub Contributions</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SKILLS ===== -->
+    <section class="section-padding skills-section" id="skills" style="background-color: var(--bg-card);">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Technical <span class="text-gradient">Skills</span></h2>
+                <p class="section-subtitle">Technologies and tools I work with</p>
+            </div>
+            <div class="row gy-4 mb-5">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up">
+                    <div class="skill-category">
+                        <h4><i class="fas fa-laptop-code"></i> Frontend</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag"><i class="fab fa-html5"></i> HTML5</span>
+                            <span class="skill-tag"><i class="fab fa-css3-alt"></i> CSS3</span>
+                            <span class="skill-tag"><i class="fab fa-js"></i> JavaScript</span>
+                            <span class="skill-tag"><i class="fab fa-typescript"></i> TypeScript</span>
+                            <span class="skill-tag"><i class="fab fa-react"></i> React.js</span>
+                            <span class="skill-tag"><i class="fab fa-react"></i> React Native</span>
+                            <span class="skill-tag"><i class="fas fa-cubes"></i> Redux Toolkit</span>
+                            <span class="skill-tag"><i class="fab fa-tailwindcss"></i> Tailwind CSS</span>
+                            <span class="skill-tag"><i class="fab fa-bootstrap"></i> Bootstrap</span>
+                            <span class="skill-tag"><i class="fas fa-bolt"></i> Vite</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="skill-category">
+                        <h4><i class="fas fa-server"></i> Backend</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag"><i class="fab fa-node-js"></i> Node.js</span>
+                            <span class="skill-tag"><i class="fas fa-code"></i> Express.js</span>
+                            <span class="skill-tag"><i class="fas fa-cloud"></i> REST APIs</span>
+                            <span class="skill-tag"><i class="fas fa-key"></i> JWT Auth</span>
+                            <span class="skill-tag"><i class="fas fa-plug"></i> API Integration</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="skill-category">
+                        <h4><i class="fas fa-database"></i> Database</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag"><i class="fas fa-leaf"></i> MongoDB</span>
+                            <span class="skill-tag"><i class="fas fa-cloud-upload-alt"></i> MongoDB Atlas</span>
+                            <span class="skill-tag"><i class="fas fa-code-branch"></i> Mongoose</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="skill-category">
+                        <h4><i class="fas fa-brain"></i> AI / ML</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag"><i class="fab fa-python"></i> Python</span>
+                            <span class="skill-tag"><i class="fas fa-robot"></i> Machine Learning</span>
+                            <span class="skill-tag"><i class="fas fa-network-wired"></i> Deep Learning</span>
+                            <span class="skill-tag"><i class="fas fa-cube"></i> TensorFlow</span>
+                            <span class="skill-tag"><i class="fas fa-cube"></i> Keras</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="skill-category">
+                        <h4><i class="fas fa-tools"></i> Tools</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag"><i class="fab fa-git-alt"></i> Git</span>
+                            <span class="skill-tag"><i class="fab fa-github"></i> GitHub</span>
+                            <span class="skill-tag"><i class="fas fa-code"></i> VS Code</span>
+                            <span class="skill-tag"><i class="fas fa-vial"></i> Postman</span>
+                            <span class="skill-tag"><i class="fab fa-npm"></i> npm</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div data-aos="fade-up">
+                <h4 class="text-center mb-4" style="font-weight:700;">Proficiency <span class="text-gradient">Levels</span></h4>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="skill-progress-item"><div class="skill-label"><span>React / Next.js</span><span>90%</span></div><div class="progress-track"><div class="progress-fill" data-width="90"></div></div></div>
+                        <div class="skill-progress-item"><div class="skill-label"><span>Node.js / Express</span><span>85%</span></div><div class="progress-track"><div class="progress-fill" data-width="85"></div></div></div>
+                        <div class="skill-progress-item"><div class="skill-label"><span>TypeScript</span><span>82%</span></div><div class="progress-track"><div class="progress-fill" data-width="82"></div></div></div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="skill-progress-item"><div class="skill-label"><span>MongoDB / Mongoose</span><span>80%</span></div><div class="progress-track"><div class="progress-fill" data-width="80"></div></div></div>
+                        <div class="skill-progress-item"><div class="skill-label"><span>React Native</span><span>70%</span></div><div class="progress-track"><div class="progress-fill" data-width="70"></div></div></div>
+                        <div class="skill-progress-item"><div class="skill-label"><span>Python / AI/ML</span><span>65%</span></div><div class="progress-track"><div class="progress-fill" data-width="65"></div></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== EXPERIENCE ===== -->
+    <section class="section-padding" id="experience">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Professional <span class="text-gradient">Experience</span></h2>
+                <p class="section-subtitle">My journey in software development</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8" data-aos="fade-up">
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-date">2023 – Present</div>
+                            <div class="timeline-title">Full-Stack Developer</div>
+                            <div class="timeline-company">Tech Solutions Inc.</div>
+                            <div class="timeline-desc">Building and maintaining full-stack web applications using the MERN stack. Responsible for designing REST APIs, implementing authentication, and optimizing database performance.</div>
+                            <div class="timeline-tech"><span class="tech-tag">React</span><span class="tech-tag">Node.js</span><span class="tech-tag">Express</span><span class="tech-tag">MongoDB</span><span class="tech-tag">TypeScript</span></div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">2022 – 2023</div>
+                            <div class="timeline-title">MERN Stack Developer</div>
+                            <div class="timeline-company">Digital Innovations</div>
+                            <div class="timeline-desc">Developed scalable web applications with React, Node.js, and MongoDB. Collaborated with cross-functional teams to deliver high-quality software solutions on time.</div>
+                            <div class="timeline-tech"><span class="tech-tag">React</span><span class="tech-tag">Redux</span><span class="tech-tag">Node.js</span><span class="tech-tag">MongoDB</span><span class="tech-tag">Tailwind CSS</span></div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">2021 – 2022</div>
+                            <div class="timeline-title">Junior Software Developer</div>
+                            <div class="timeline-company">Startup Hub</div>
+                            <div class="timeline-desc">Built responsive web applications and contributed to API development. Gained hands-on experience with modern JavaScript frameworks and agile development methodologies.</div>
+                            <div class="timeline-tech"><span class="tech-tag">JavaScript</span><span class="tech-tag">React</span><span class="tech-tag">Node.js</span><span class="tech-tag">Bootstrap</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== EDUCATION ===== -->
+    <section class="section-padding" id="education" style="background-color: var(--bg-card);">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Education</h2>
+                <p class="section-subtitle">My academic background</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8" data-aos="fade-up">
+                    <div class="edu-card">
+                        <div class="edu-icon"><i class="fas fa-university"></i></div>
+                        <h5>Bachelor's Degree in Information Technology</h5>
+                        <div class="edu-meta">University of Technology • 2019 – 2023</div>
+                        <ul class="edu-list">
+                            <li><i class="fas fa-circle-check"></i> Full-Stack Web Development</li>
+                            <li><i class="fas fa-circle-check"></i> Database Management Systems</li>
+                            <li><i class="fas fa-circle-check"></i> Software Engineering</li>
+                            <li><i class="fas fa-circle-check"></i> Machine Learning &amp; AI</li>
+                            <li><i class="fas fa-circle-check"></i> Data Structures &amp; Algorithms</li>
+                            <li><i class="fas fa-circle-check"></i> Network Security</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SERVICES ===== -->
+    <section class="section-padding" id="services">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">My <span class="text-gradient">Services</span></h2>
+                <p class="section-subtitle">What I can do for you</p>
+            </div>
+            <div class="row gy-4">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up"><div class="service-card"><div class="service-icon"><i class="fas fa-code"></i></div><h5>Full-Stack Web Development</h5><p>Scalable web applications using React, Node.js, Express, and MongoDB.</p></div></div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100"><div class="service-card"><div class="service-icon"><i class="fas fa-paint-brush"></i></div><h5>Frontend Development</h5><p>Responsive, modern interfaces with React, TypeScript, Tailwind CSS, and Bootstrap.</p></div></div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200"><div class="service-card"><div class="service-icon"><i class="fas fa-server"></i></div><h5>Backend Development</h5><p>REST APIs, authentication systems, database integrations, and server-side applications.</p></div></div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300"><div class="service-card"><div class="service-icon"><i class="fas fa-mobile-alt"></i></div><h5>React Native Development</h5><p>Cross-platform mobile applications with a native feel.</p></div></div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400"><div class="service-card"><div class="service-icon"><i class="fas fa-brain"></i></div><h5>AI / Machine Learning</h5><p>Experimental AI and ML applications using Python, TensorFlow, and Keras.</p></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TESTIMONIALS ===== -->
+    <section class="section-padding" id="testimonials" style="background-color: var(--bg-card);">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Client <span class="text-gradient">Testimonials</span></h2>
+                <p class="section-subtitle">What people say about working with me</p>
+            </div>
+            <div class="swiper testimonialSwiper" data-aos="fade-up">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><div class="testimonial-card"><div class="testimonial-avatar">JD</div><div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="testimonial-text">"Zain is an exceptional developer who delivered our project ahead of schedule. His attention to detail and problem-solving skills are top-notch. Highly recommend!"</p><div class="testimonial-name">John Doe</div><div class="testimonial-role">CTO, Tech Solutions</div></div></div>
+                    <div class="swiper-slide"><div class="testimonial-card"><div class="testimonial-avatar">SM</div><div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="testimonial-text">"Working with Zain was a pleasure. He built a complex e-commerce platform for us with clean code and excellent communication throughout the process."</p><div class="testimonial-name">Sarah Mitchell</div><div class="testimonial-role">CEO, Digital Innovations</div></div></div>
+                    <div class="swiper-slide"><div class="testimonial-card"><div class="testimonial-avatar">AK</div><div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="testimonial-text">"Zain's expertise in the MERN stack transformed our outdated system into a modern, fast, and scalable application. His work has significantly improved our operations."</p><div class="testimonial-name">Alex Kumar</div><div class="testimonial-role">Product Manager, Startup Hub</div></div></div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ACHIEVEMENTS ===== -->
+    <section class="section-padding" id="achievements">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Achievements &amp; <span class="text-gradient">Certifications</span></h2>
+                <p class="section-subtitle">Recognitions and credentials</p>
+            </div>
+            <div class="row gy-4">
+                <div class="col-lg-3 col-md-6" data-aos="fade-up"><div class="achievement-card"><div class="ach-icon"><i class="fas fa-trophy"></i></div><h6>Best Full-Stack Project</h6><p>University Hackathon 2023</p></div></div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100"><div class="achievement-card"><div class="ach-icon"><i class="fas fa-certificate"></i></div><h6>MERN Stack Certification</h6><p>IBM Developer Skills</p></div></div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200"><div class="achievement-card"><div class="ach-icon"><i class="fas fa-award"></i></div><h6>Top Contributor</h6><p>Open Source 2024</p></div></div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300"><div class="achievement-card"><div class="ach-icon"><i class="fas fa-brain"></i></div><h6>AI/ML Specialization</h6><p>DeepLearning.AI</p></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== WHY HIRE ME ===== -->
+    <section class="section-padding" id="hire" style="background-color: var(--bg-card);">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Why <span class="text-gradient">Hire Me</span></h2>
+                <p class="section-subtitle">What I bring to the table</p>
+            </div>
+            <div class="row gy-3">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up"><div class="hire-card"><div class="hire-icon"><i class="fas fa-layer-group"></i></div><div class="hire-content"><h6>Full-Stack Expertise</h6><p>End-to-end development with modern MERN stack and TypeScript.</p></div></div></div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100"><div class="hire-card"><div class="hire-icon"><i class="fas fa-lightbulb"></i></div><div class="hire-content"><h6>Problem Solving</h6><p>Strong analytical skills and ability to solve complex challenges.</p></div></div></div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200"><div class="hire-card"><div class="hire-icon"><i class="fas fa-code"></i></div><div class="hire-content"><h6>Clean Code</h6><p>Writing maintainable, scalable, and well-documented code.</p></div></div></div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300"><div class="hire-card"><div class="hire-icon"><i class="fas fa-users"></i></div><div class="hire-content"><h6>Team Player</h6><p>Excellent communication and collaboration skills.</p></div></div></div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400"><div class="hire-card"><div class="hire-icon"><i class="fas fa-graduation-cap"></i></div><div class="hire-content"><h6>Continuous Learner</h6><p>Always exploring new technologies and best practices.</p></div></div></div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500"><div class="hire-card"><div class="hire-icon"><i class="fas fa-microchip"></i></div><div class="hire-content"><h6>AI/ML Knowledge</h6><p>Experience with Python, TensorFlow, and machine learning concepts.</p></div></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== GITHUB ACTIVITY ===== -->
+    <section class="section-padding github-section" id="github">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title"><i class="fab fa-github" style="color: var(--primary);"></i> GitHub <span class="text-gradient">Activity</span></h2>
+                <p class="section-subtitle">Open-source projects and contributions</p>
+            </div>
+            <div class="row gy-4">
+                <div class="col-md-4" data-aos="fade-up"><div class="repo-card"><div class="repo-name"><i class="fas fa-book"></i> psbi-lms</div><div class="repo-desc">Full-stack Learning Management System with MERN stack.</div><div class="repo-meta"><span><i class="fas fa-star"></i> 24</span><span><i class="fas fa-code-branch"></i> 8</span><span><i class="fas fa-circle" style="color: #34d399;"></i> TypeScript</span></div></div></div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100"><div class="repo-card"><div class="repo-name"><i class="fas fa-book"></i> ecommerce-platform</div><div class="repo-desc">Modern e-commerce application with React and Node.js.</div><div class="repo-meta"><span><i class="fas fa-star"></i> 18</span><span><i class="fas fa-code-branch"></i> 5</span><span><i class="fas fa-circle" style="color: #fbbf24;"></i> JavaScript</span></div></div></div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200"><div class="repo-card"><div class="repo-name"><i class="fas fa-book"></i> covid-xray-ai</div><div class="repo-desc">AI-powered chest X-ray classification with TensorFlow.</div><div class="repo-meta"><span><i class="fas fa-star"></i> 12</span><span><i class="fas fa-code-branch"></i> 3</span><span><i class="fas fa-circle" style="color: #a78bfa;"></i> Python</span></div></div></div>
+            </div>
+            <div class="text-center mt-4"><a href="https://github.com" target="_blank" class="btn btn-outline-custom"><i class="fab fa-github"></i> View All Repositories</a></div>
+        </div>
+    </section>
+
+    <!-- ===== RESUME / CV ===== -->
+    <section class="section-padding resume-section" id="resume" style="background-color: var(--bg-card);">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Resume / <span class="text-gradient">CV</span></h2>
+                <p class="section-subtitle">Download or view my resume</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-6" data-aos="fade-up">
+                    <div class="resume-card">
+                        <div class="resume-icon"><i class="fas fa-file-pdf"></i></div>
+                        <h4>Download My Resume</h4>
+                        <p>Get a complete overview of my experience, skills, and achievements.</p>
+                        <div class="d-flex flex-wrap justify-content-center gap-3">
+                            <a href="asset/zain-abbas-cv updated512 (1).pdf" download="Zain_Abbas_CV.pdf" class="btn btn-primary-custom"><i class="fas fa-download"></i> Download CV</a>
+                            <a href="asset/zain-abbas-cv updated512 (1).pdf" target="_blank" class="btn btn-outline-custom"><i class="fas fa-eye"></i> View Resume</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CALL TO ACTION: Projects & Contact ===== -->
+    <section class="section-padding" style="background-color: var(--bg-body);">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-6" data-aos="fade-right">
+                    <div class="bg-card-custom text-center p-5" style="height:100%;">
+                        <i class="fas fa-code" style="font-size:3rem; color:var(--primary); margin-bottom:1rem;"></i>
+                        <h4>Explore My Projects</h4>
+                        <p class="text-muted">View all the full-stack, mobile, and AI/ML projects I have built.</p>
+                        <a href="projects.html" class="btn btn-primary-custom mt-2">Go to Projects <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-6" data-aos="fade-left">
+                    <div class="bg-card-custom text-center p-5" style="height:100%;">
+                        <i class="fas fa-envelope" style="font-size:3rem; color:var(--primary); margin-bottom:1rem;"></i>
+                        <h4>Let's Work Together</h4>
+                        <p class="text-muted">Have a project in mind? Reach out to me and let's build something great.</p>
+                        <a href="contact.html" class="btn btn-primary-custom mt-2">Contact Me <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row align-items-center gy-3">
+                <div class="col-md-4 text-md-start text-center"><div class="footer-brand">Zain<span>Abbas</span></div><div class="footer-tagline">Software Developer | Full-Stack Developer</div></div>
+                <div class="col-md-4 text-center"><div class="footer-links"><a href="index.html">Home</a><a href="index.html#about">About</a><a href="projects.html">Projects</a><a href="contact.html">Contact</a></div></div>
+                <div class="col-md-4 text-md-end text-center"><div class="footer-social"><a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a><a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a><a href="mailto:zainstu78651214@gmail.com"><i class="fas fa-envelope"></i></a><a href="#"><i class="fab fa-twitter"></i></a></div></div>
+            </div>
+            <div class="footer-copy text-center">&copy; 2026 Zain Abbas. All rights reserved. Built with <i class="fas fa-heart" style="color: var(--primary);"></i></div>
+        </div>
+    </footer>
+
+    <!-- ===== SCRIPTS ===== -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
